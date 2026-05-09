@@ -1,7 +1,7 @@
 vim.diagnostic.config {
 	update_in_insert = false,
 	severity_sort = true,
-	float = { border = "rounded", source = "if_many" },
+	float = { border = "rounded", },
 	underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
 	virtual_text = true,

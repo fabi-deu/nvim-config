@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			km.set(mode, keys, func, { buffer = bufnr, desc = desc })
 		end
 
-		map("n", "K", vim.lsp.buf.hover, "LSP Hover")
+		--map("n", "K", vim.lsp.buf.hover, "LSP Hover")
 		map("n", "gd", vim.lsp.buf.definition, "Go to definition")
 		map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
 		map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")

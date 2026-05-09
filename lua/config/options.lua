@@ -33,3 +33,6 @@ vim.o.scrolloff = 12
 vim.o.hlsearch = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+
+-- cool rounded borders rounded/single/double/solid/shadow
+vim.o.winborder = "rounded"
