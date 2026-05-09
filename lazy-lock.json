@@ -1,4 +1,8 @@
 {
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
-  "nvim-treesitter": { "branch": "main", "commit": "4916d6592ede8c07973490d9322f187e07dfefac" }
+  "nvim-treesitter": { "branch": "main", "commit": "4916d6592ede8c07973490d9322f187e07dfefac" },
+  "oxocarbon.nvim": { "branch": "main", "commit": "a7ba74849a00546a311f8c146320b433900393e7" },
+  "token": { "branch": "main", "commit": "5dbcf002a9ac7eda4fb78fe5a7ceaaac8162e511" },
+  "vague.nvim": { "branch": "main", "commit": "fd58046b9d64259d9785e4aeb6d6f494c6943cad" },
+  "vesper.nvim": { "branch": "main", "commit": "1717b1ad657c94bec3fc2bdebb0c55452d9fe46d" }
 }
