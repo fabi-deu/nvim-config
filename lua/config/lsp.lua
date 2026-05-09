@@ -15,6 +15,7 @@ vim.diagnostic.config {
 
 
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("stylua")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("clangd")
 vim.lsp.enable("jsonls")

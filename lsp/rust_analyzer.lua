@@ -1,12 +1,12 @@
 return {
-	cmd = { 'rust-analyzer' },
-	filetypes = { 'rust' },
-	root_markers = { 'Cargo.toml', 'Cargo.lock', '.git' },
+	cmd = { "rust-analyzer" },
+	filetypes = { "rust" },
+	root_markers = { "Cargo.toml", "Cargo.lock", ".git" },
 	settings = {
-		['rust-analyzer'] = {
+		["rust-analyzer"] = {
 			cargo = { allFeatures = true },
 			checkOnSave = true,
-			check = { command = 'clippy' },
+			check = { command = "clippy" },
 		},
 	},
 }
