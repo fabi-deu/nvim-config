@@ -94,3 +94,7 @@ km.set("n", "<leader>s/", function()
 	}
 end, { desc = "[S]earch in Open Files" }
 )
+
+
+-- Oil
+km.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory (Oil)" })
