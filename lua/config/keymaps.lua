@@ -6,8 +6,7 @@ km.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- diagnostics
 km.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open Diagnostic [Q]uickfix list" })
 
--- window movement
-km.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+-- window movement km.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 km.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 km.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 km.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
@@ -98,3 +97,37 @@ end, { desc = "[S]earch in Open Files" }
 
 -- Oil
 km.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory (Oil)" })
+
+
+-- harpoon
+local harpoon = require("harpoon")
+harpoon:setup()
+
+km.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Add Buffer to Harpoon" })
+km.set("n", "<leader>he", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon Quick Menu" })
+for i = 1, 10, 1 do
+	-- set for 1 to 10
+	km.set("n", "<C-" .. i .. ">", function() harpoon:list():select(i) end, { desc = "Harpoon (" .. i .. ")" })
+end
+km.set("n", "<leader>p", function() harpoon:list():prev() end, { desc = "Harpoon previous" })
+km.set("n", "<leader>n", function() harpoon:list():next() end, { desc = "Harpoon next" })
+
+-- harpoon + telescope
+local conf = require("telescope.config").values
+local function toggle_telescope(harpoon_files)
+	local file_paths = {}
+	for _, item in ipairs(harpoon_files.items) do
+		table.insert(file_paths, item.value)
+	end
+
+	require("telescope.pickers").new({}, {
+		prompt_title = "Harpoon",
+		finder = require("telescope.finders").new_table({
+			results = file_paths,
+		}),
+		previewer = conf.file_previewer({}),
+		sorter = conf.generic_sorter({}),
+	}):find()
+end
+
+km.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, { desc = "Open harpoon window" })
